@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+
+        stage('npm install'){
+            steps{
+                sh 'npm install'
+            }
+        }
+
         stage('deploy') {
             steps {
                 sh 'npm run build'
