@@ -1,8 +1,11 @@
 pipeline {
-    agent any
-    
+    agent {
+        docker {
+            image 'node:14-alpine'
+            args '-v $HOME:/home/jenkins'
+        }
+    }
     stages {
-    
         stage('npm install') {
             steps {
                 sh 'npm install'
