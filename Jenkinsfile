@@ -2,16 +2,15 @@ pipeline {
     agent any
 
     stages {
-
-        stage('npm install'){
-            steps{
+        stage('npm install') {
+            steps {
                 sh 'npm install'
             }
         }
 
         stage('deploy') {
             steps {
-                sh 'CI = false npm run build'
+                sh 'npm run build'
             }
         }
 
@@ -31,5 +30,4 @@ pipeline {
             }
         }
     }
-
 }
